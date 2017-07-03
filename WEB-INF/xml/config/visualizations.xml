@@ -1,0 +1,5 @@
+<visualizations>
+  <visualization-list name="ajax">
+    <visualization id="CokeWidget" desc="Coke Widget" is-mojo="true" scope="18" style-name="CokeWidget" attribute-minimum="1" metric-minimum="0"/>
+  </visualization-list>
+</visualizations>

@@ -1,9 +1,33 @@
 .modal-content{
-   background-color : #f5f5f5;
+   all: initial;	
+   * {
+    all: unset;
+   }
+   background-color : #f5f5f5!important;
+   overflow: auto!important;
+}
+.modal {
+ //   display: none!important; /* Hidden by default */
+    position: fixed!important; /* Stay in place */
+    z-index: 1!important; /* Sit on top */
+    left: 0!important;
+    top: 0!important;
+    width: 100%!important; /* Full width */
+    height: 100%!important; /* Full height */
+    overflow: auto!important; /* Enable scroll if needed */
+    background-color: rgb(0,0,0)!important; /* Fallback color */
+    background-color: rgba(0,0,0,0.4)!important; /* Black w/ opacity */
 }
 div.DashboardBar{
-	all: revert;
-} 
+  all: initial;
+  * {
+    all: unset;
+  }
+}
+
+
+
+
 /*div.lvl1 img{ display: block;float: left;margin-right: 5px;}
 div.lvl2 img{ display: block;float: left;margin-right: 5px;}
 div.lvl3 img{ display: block;float: left;margin-right: 5px;}

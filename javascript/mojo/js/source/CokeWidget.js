@@ -21,6 +21,8 @@
             cssClass: [
                 {url: "../plugins/CokeWidget/style/PopUpWidget.css"},
                 {url: "../plugins/CokeWidget/javascript/vendor/bootstrap/css/bootstrap.min.css"},
+                {url: "../plugins/CokeWidget/javascript/vendor/animatedModal/demo/css/animate.min.css"},
+                {url: "../plugins/CokeWidget/javascript/vendor/animatedModal/demo/css/normalize.min.css"},
                 {url: "../plugins/CokeWidget/javascript/vendor/bootstrap/css/bootstrap-theme.min.css"}
             ],
 	    // Define the error message to be displayed if JavaScript errors prevent data from being displayed
@@ -33,6 +35,7 @@
                 {url: "../plugins/CokeWidget/javascript/vendor/typeahead/typeahead.bundle.min.js"},
                 {url: "../plugins/CokeWidget/javascript/vendor/typeahead/typeahead.jquery.min.js"},
                 {url: "../plugins/CokeWidget/javascript/Visualization/renderViz.js"}
+                
                 
             ],
             // Define whether a tooltip should be displayed with additional information
@@ -74,8 +77,9 @@
                     //console.log(data);
                     return data;
                 }
-                
-                $(domNode).append('<div class="DashboardBar"><a href="../plugins/CokeWidget/html/popupWidget.html" data-toggle="modal" data-target="#myModal" ><img id="imgS" src="../plugins/CokeWidget/style/images/badges/CCNA.png"><p id="paths" ></p></img></a><div id="myModal" class="modal fade" ><div class="modal-dialog" style="width:80%"><div class="modal-content" ></div></div></div></div>');                
+                //console.log('Applying to Domnode');
+                $(domNode).append('<div class="DashboardBar" ><a href="../plugins/CokeWidget/html/popupWidget.html" data-toggle="modal" data-target="#myModal" ><img id="imgS" src="../plugins/CokeWidget/style/images/badges/CCNA.png"><p id="paths" ></p></img></a><div id="myModal" class="modal fade" ><div class="modal-dialog" style="width:80%"><div class="modal-content" ></div></div></div></div>');                
+                //$(domNode).append('<ul><li><a id="demo01" href="#animatedModal">DEMO01</a></li></ul> <div id="animatedModal"><div  id="btn-close-modal" class="close-animatedModal">CLOSE MODAL</div><div class="modal-content"></div></div><script>$("#demo01").animatedModal();</script>');
                 ApplyBaseImage(prepareData());
                 /*function renderGraph() {
                     var data = new google.visualization.DataTable(prepareData());

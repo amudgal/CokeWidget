@@ -3,6 +3,9 @@
  * Version : 1.0
  * Client : Coca Cola
 */
+var localscopeLastLvl = "";
+var SrcJSON = "";
+var selections =[];
 var badgePath="../plugins/CokeWidget/style/images/badges";
 $( document ).ready(function() {
 	console.log('Properly rendered the renderViz.js ' + badgePath);
@@ -12,4 +15,5 @@ $( document ).ready(function() {
 
 function ApplyBaseImage(data){
 	console.log(data);
+	
 }

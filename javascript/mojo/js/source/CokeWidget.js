@@ -48,9 +48,16 @@
                     var data = {};
                     // Set cols //attributes column header/type
                     data.cols = [];
-                    data.cols[0] = {"id": "ATT_NAME_JS", "label": "Attribute", "type": "string"};
+                    //data.cols[0] = {"id": "ATT_NAME_JS", "label": "Attribute", "type": "string"};
                     // Set metrics columns header/type
                     var i;
+                    //get all Attribute names 
+                    for (i = 0; i < dp.getRowTitles().size(); i++) {
+                        var AttribName = dp.getRowTitles(0).getTitle(i).getName();
+                        console.log(AttribName);
+                        data.cols[i]=AttribName;
+                    }
+                    
                     for (i = 0; i < dp.getColumnHeaderCount(); i++) {
                         var metricName = dp.getColHeaders(0).getHeader(i).getName();
                         data.cols[1 + i] = {"id": metricName, "label": metricName, "type": "number"};

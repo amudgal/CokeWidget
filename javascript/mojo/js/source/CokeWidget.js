@@ -21,6 +21,8 @@
             cssClass: [
                 {url: "../plugins/CokeWidget/style/PopUpWidget.css"},
                 {url: "../plugins/CokeWidget/javascript/vendor/bootstrap/css/bootstrap.min.css"},
+                {url: "../plugins/CokeWidget/javascript/vendor/animatedModal/demo/css/animate.min.css"},
+                {url: "../plugins/CokeWidget/javascript/vendor/animatedModal/demo/css/normalize.min.css"},
                 {url: "../plugins/CokeWidget/javascript/vendor/bootstrap/css/bootstrap-theme.min.css"}
             ],
 	    // Define the error message to be displayed if JavaScript errors prevent data from being displayed
@@ -34,6 +36,7 @@
                 {url: "../plugins/CokeWidget/javascript/vendor/typeahead/typeahead.jquery.min.js"},
                 {url: "../plugins/CokeWidget/javascript/Visualization/renderViz.js"}
                 
+                
             ],
             // Define whether a tooltip should be displayed with additional information
             useRichTooltip: true,
@@ -45,24 +48,34 @@
                     var data = {};
                     // Set cols //attributes column header/type
                     data.cols = [];
-                    data.cols[0] = {"id": "ATT_NAME_JS", "label": "Attribute", "type": "string"};
+                    //data.cols[0] = {"id": "ATT_NAME_JS", "label": "Attribute", "type": "string"};
                     // Set metrics columns header/type
                     var i;
-                    for (i = 0; i < dp.getColumnHeaderCount(); i++) {
+                    //get all Attribute names 
+                    for (i = 0; i < dp.getRowTitles().size(); i++) {
+                        var AttribName = dp.getRowTitles(0).getTitle(i).getName();
+                        //console.log(AttribName);
+                        data.cols[i]=AttribName;
+                    }
+                    
+                    /*for (i = 0; i < dp.getColumnHeaderCount(); i++) {
                         var metricName = dp.getColHeaders(0).getHeader(i).getName();
                         data.cols[1 + i] = {"id": metricName, "label": metricName, "type": "number"};
-                    }
+                    }*/
                     // Set rows data
                     data.rows = [];
                     // Iterate thru all rows
                     for (i = 0; i < dp.getTotalRows(); i++) {
+                    	
                         data.rows[i] = {};
                         var c = [], attributesValue = "";
                         // Set attribute values to single string for row
                         var a;
                         for (a = 0; a < dp.getRowHeaders(i).size(); a++) {
-                            attributesValue += dp.getRowHeaders(i).getHeader(a).getName() + " ";
+                            attributesValue += dp.getRowHeaders(i).getHeader(a).getName() + "|";
+                            
                         }
+                        console.log(attributesValue);    
                         c[0] = {"v": attributesValue};
                         // Set metrics values in row
                         var z;
@@ -71,11 +84,12 @@
                         }
                         data.rows[i].c = c;
                     }
-                    //console.log(data);
+                    console.log(data);
                     return data;
                 }
-                
-                $(domNode).append('<div class="DashboardBar"><a href="../plugins/CokeWidget/html/popupWidget.html" data-toggle="modal" data-target="#myModal" ><img id="imgS" src="../plugins/CokeWidget/style/images/badges/CCNA.png"><p id="paths" ></p></img></a><div id="myModal" class="modal fade" ><div class="modal-dialog" style="width:80%"><div class="modal-content" ></div></div></div></div>');                
+                //console.log('Applying to Domnode');
+                $(domNode).append('<div class="DashboardBar" ><a href="../plugins/CokeWidget/html/popupWidget.html" data-toggle="modal" data-target="#myModal" ><img id="imgS" src="../plugins/CokeWidget/style/images/badges/CCNA.png"><p id="paths" ></p></img></a><div id="myModal" class="modal fade" ><div class="modal-dialog" style="width:80%"><div class="modal-content" ></div></div></div></div>');                
+                //$(domNode).append('<ul><li><a id="demo01" href="#animatedModal">DEMO01</a></li></ul> <div id="animatedModal"><div  id="btn-close-modal" class="close-animatedModal">CLOSE MODAL</div><div class="modal-content"></div></div><script>$("#demo01").animatedModal();</script>');
                 ApplyBaseImage(prepareData());
                 /*function renderGraph() {
                     var data = new google.visualization.DataTable(prepareData());

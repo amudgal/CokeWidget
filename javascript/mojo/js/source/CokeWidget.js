@@ -54,25 +54,28 @@
                     //get all Attribute names 
                     for (i = 0; i < dp.getRowTitles().size(); i++) {
                         var AttribName = dp.getRowTitles(0).getTitle(i).getName();
-                        console.log(AttribName);
+                        //console.log(AttribName);
                         data.cols[i]=AttribName;
                     }
                     
-                    for (i = 0; i < dp.getColumnHeaderCount(); i++) {
+                    /*for (i = 0; i < dp.getColumnHeaderCount(); i++) {
                         var metricName = dp.getColHeaders(0).getHeader(i).getName();
                         data.cols[1 + i] = {"id": metricName, "label": metricName, "type": "number"};
-                    }
+                    }*/
                     // Set rows data
                     data.rows = [];
                     // Iterate thru all rows
                     for (i = 0; i < dp.getTotalRows(); i++) {
+                    	
                         data.rows[i] = {};
                         var c = [], attributesValue = "";
                         // Set attribute values to single string for row
                         var a;
                         for (a = 0; a < dp.getRowHeaders(i).size(); a++) {
-                            attributesValue += dp.getRowHeaders(i).getHeader(a).getName() + " ";
+                            attributesValue += dp.getRowHeaders(i).getHeader(a).getName() + "|";
+                            
                         }
+                        console.log(attributesValue);    
                         c[0] = {"v": attributesValue};
                         // Set metrics values in row
                         var z;
@@ -81,7 +84,7 @@
                         }
                         data.rows[i].c = c;
                     }
-                    //console.log(data);
+                    console.log(data);
                     return data;
                 }
                 //console.log('Applying to Domnode');

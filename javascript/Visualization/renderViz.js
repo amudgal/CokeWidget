@@ -50,7 +50,7 @@ function createJSON(data){
     		if(typeof(RowsData[i])=='undefined'){
     			break;
     		}
-    		
+    		var insert='';
     		//console.log(data.rows[i].c[0].v);
     		//console.log(data.rows[i].c[0].v.split('|')[0]);
     		for(var j=0;headers.length;j++){
@@ -92,13 +92,17 @@ function createJSON(data){
             				'sel':selection
             			};
                     if(selection.length > 0){
+                    	
                     	gSON.push(levelString);	
                     }
         			selection=[];
     			}
-    		
-    			console.log(lvl + ' ' + Level)
-    			console.log(ID);
+    			console.log(lvl + ' ' + Level);
+    			if(Level!=1){
+    				selection.push(sel);	
+    			}
+    			
+    			console.log(ID +' ' +sel.nm);
     			lvl=Level;
     		}else{
     			console.log('Not Same::'+ID);
@@ -116,7 +120,7 @@ function createJSON(data){
 			gSON.push(levelString);
 		}
     	SelJSON=JSON.stringify(gSON);
-    	
+    	console.log(SelJSON);
     }catch(e){
 	   console.log(e);
     }

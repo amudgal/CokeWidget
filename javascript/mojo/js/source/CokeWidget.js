@@ -34,8 +34,8 @@
                 {url: "../plugins/CokeWidget/javascript/vendor/typeahead/bloodhound.min.js"},
                 {url: "../plugins/CokeWidget/javascript/vendor/typeahead/typeahead.bundle.min.js"},
                 {url: "../plugins/CokeWidget/javascript/vendor/typeahead/typeahead.jquery.min.js"},
-                {url: "../plugins/CokeWidget/javascript/Visualization/renderViz.js"}
-                
+                {url: "../plugins/CokeWidget/javascript/Visualization/renderViz.js"}//,
+                //{url: "../plugins/CokeWidget/javascript/Visualization/PopUpWidgetController.js"}
                 
             ],
             // Define whether a tooltip should be displayed with additional information
@@ -73,22 +73,21 @@
                         var a;
                         for (a = 0; a < dp.getRowHeaders(i).size(); a++) {
                             attributesValue += dp.getRowHeaders(i).getHeader(a).getName() + "|";
-                            
                         }
-                        console.log(attributesValue);    
+                        //console.log(attributesValue);    
                         c[0] = {"v": attributesValue};
                         // Set metrics values in row
                         var z;
-                        for (z = 0; z < dp.getColumnHeaderCount(); z++) {
+                        /*for (z = 0; z < dp.getColumnHeaderCount(); z++) {
                             c[1 + z] = {"v": dp.getMetricValue(i, z).getRawValue()};
-                        }
+                        }*/
                         data.rows[i].c = c;
                     }
-                    console.log(data);
+                    //console.log(data);
                     return data;
                 }
                 //console.log('Applying to Domnode');
-                $(domNode).append('<div class="DashboardBar" ><a href="../plugins/CokeWidget/html/popupWidget.html" data-toggle="modal" data-target="#myModal" ><img id="imgS" src="../plugins/CokeWidget/style/images/badges/CCNA.png"><p id="paths" ></p></img></a><div id="myModal" class="modal fade" ><div class="modal-dialog" style="width:80%"><div class="modal-content" ></div></div></div></div>');                
+                $(domNode).append('<div class="DashboardBar" ><a href="../plugins/CokeWidget/html/popupWidget.html" data-toggle="modal" data-target="#myModal" ><img id="imgS" src="../plugins/CokeWidget/style/images/badges/CCNA.png"></img></a><div id="myModal" class="modal fade" ><div class="modal-dialog" style="width:80%"><div class="modal-content" ></div></div></div></div>');                
                 //$(domNode).append('<ul><li><a id="demo01" href="#animatedModal">DEMO01</a></li></ul> <div id="animatedModal"><div  id="btn-close-modal" class="close-animatedModal">CLOSE MODAL</div><div class="modal-content"></div></div><script>$("#demo01").animatedModal();</script>');
                 ApplyBaseImage(prepareData());
                 /*function renderGraph() {

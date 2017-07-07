@@ -1,0 +1,19 @@
+<framework>
+  <pages>
+    <page name="rwd">
+      <addons>
+        <addon XMLmerge_id="50" name="com.coke.ApplyFilterCriteria"/>
+      </addons>
+    </page>
+    <page name="rwDetails">
+      <addons>
+        <addon XMLmerge_id="50" name="com.coke.ApplyFilterCriteria"/>
+      </addons>
+    </page>
+    <page name="oivm">
+      <addons>
+        <addon XMLmerge_id="50" name="com.coke.ApplyFilterCriteria"/>
+      </addons>
+    </page>
+  </pages>
+</framework>

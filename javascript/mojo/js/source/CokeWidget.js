@@ -75,16 +75,16 @@
                             attributesValue += dp.getRowHeaders(i).getHeader(a).getName() + "|";
                             
                         }
-                        console.log(attributesValue);    
+                        //console.log(attributesValue);    
                         c[0] = {"v": attributesValue};
                         // Set metrics values in row
                         var z;
-                        for (z = 0; z < dp.getColumnHeaderCount(); z++) {
+                        /*for (z = 0; z < dp.getColumnHeaderCount(); z++) {
                             c[1 + z] = {"v": dp.getMetricValue(i, z).getRawValue()};
-                        }
+                        }*/
                         data.rows[i].c = c;
                     }
-                    console.log(data);
+                    //console.log(data);
                     return data;
                 }
                 //console.log('Applying to Domnode');

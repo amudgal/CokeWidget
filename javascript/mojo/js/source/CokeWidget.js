@@ -34,8 +34,8 @@
                 {url: "../plugins/CokeWidget/javascript/vendor/typeahead/bloodhound.min.js"},
                 {url: "../plugins/CokeWidget/javascript/vendor/typeahead/typeahead.bundle.min.js"},
                 {url: "../plugins/CokeWidget/javascript/vendor/typeahead/typeahead.jquery.min.js"},
-                {url: "../plugins/CokeWidget/javascript/Visualization/renderViz.js"}
-                
+                {url: "../plugins/CokeWidget/javascript/Visualization/renderViz.js"}//,
+                //{url: "../plugins/CokeWidget/javascript/Visualization/PopUpWidgetController.js"}
                 
             ],
             // Define whether a tooltip should be displayed with additional information
@@ -73,7 +73,6 @@
                         var a;
                         for (a = 0; a < dp.getRowHeaders(i).size(); a++) {
                             attributesValue += dp.getRowHeaders(i).getHeader(a).getName() + "|";
-                            
                         }
                         //console.log(attributesValue);    
                         c[0] = {"v": attributesValue};

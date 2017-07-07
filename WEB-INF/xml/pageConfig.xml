@@ -15,10 +15,5 @@
         <addon XMLmerge_id="50" name="com.coke.ApplyFilterCriteria"/>
       </addons>
     </page>
-    <page desc-id="" feature-id="" name="RNAV">
-      <templates>
-        <template file-name="/plugins/CokeLookAndFeel/jsp/RNAV.jsp"/>
-      </templates>
-    </page>
   </pages>
 </framework>

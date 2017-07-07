@@ -10,16 +10,12 @@ var badgePath="../plugins/CokeWidget/style/images/badges";
 $( document ).ready(function() {
 	console.log('Properly rendered the renderViz.js ' + badgePath);
 	
-	
 });
 
 function ApplyBaseImage(data){
 	//console.log(data);
 	SrcJSON=createJSON(data);
-	
-	
-	
-	
+
 }
 
 function createJSON(data){
